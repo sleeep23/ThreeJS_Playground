@@ -61,7 +61,7 @@ export default function Experience() {
   }, [curve1]);
 
   // 카메라 그룹지정
-  const cameraGroup = useRef();
+  const cameraGroup = useRef<unknown>();
 
   // 스크롤 시 모션지정
   const scroll = useScroll();
@@ -128,7 +128,7 @@ export default function Experience() {
     airplane.current?.quaternion.slerp(targetAirplaneQuaternion, delta * 2);
   });
 
-  const airplane = useRef();
+  const airplane = useRef<unknown>();
   return (
     <>
       <directionalLight position={[0, 3, 1]} intensity={0.1} />
