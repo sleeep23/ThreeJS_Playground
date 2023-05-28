@@ -51,11 +51,6 @@ export default function Experience() {
     );
   }, []);
 
-  // 경로 지점
-  const linePoints = useMemo(() => {
-    return curve1.getPoints(LINE_NB_POINTS);
-  }, [curve1]);
-
   // 곡선의 모양 지정
   const shape = useMemo(() => {
     const shape = new THREE.Shape();
@@ -350,7 +345,7 @@ export default function Experience() {
               },
             ]}
           />
-          <meshStandardMaterial color="white" opacity={1} transparent />
+          <meshStandardMaterial color="white" transparent />
         </mesh>
         <mesh>
           <extrudeGeometry
@@ -363,7 +358,7 @@ export default function Experience() {
               },
             ]}
           />
-          <meshStandardMaterial color="white" opacity={1} transparent />
+          <meshStandardMaterial color="white" transparent />
         </mesh>
       </group>
 

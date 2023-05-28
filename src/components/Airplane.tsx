@@ -1,10 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 
-const HELIX_SPEED = 1;
-
-export default function Airplane(props) {
+export default function Airplane(props: never) {
   const { nodes, materials } = useGLTF("/Airplane.gltf");
   return (
     <group {...props} dispose={null}>
