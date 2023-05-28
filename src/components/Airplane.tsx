@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function Airplane(props: never) {
+export default function Airplane({ ...props }) {
   const { nodes, materials } = useGLTF("/Airplane.gltf");
   return (
     <group {...props} dispose={null}>
