@@ -1,4 +1,3 @@
-import React from "react";
 import { Environment, Sphere } from "@react-three/drei";
 import { Gradient, LayerMaterial } from "lamina";
 import * as THREE from "three";
