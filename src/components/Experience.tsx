@@ -69,14 +69,14 @@ export default function Experience() {
     // 스크롤 시 카메라가 비행기 따라가도록 설정
     const scrollOffset = Math.max(0, scroll.offset);
     const cntPoint = curve1.getPoint(scrollOffset);
-    cameraGroup.current.position.lerp(cntPoint, delta * 24);
+    cameraGroup.current?.position.lerp(cntPoint, delta * 24);
 
     // lookAt 포인트 지정
     const lookAtPoint = curve1.getPoint(
       Math.min(scrollOffset + CURVE_AHEAD_CAMERA, 1)
     );
 
-    const cntLookAt = cameraGroup.current.getWorldDirection(
+    const cntLookAt = cameraGroup.current?.getWorldDirection(
       new THREE.Vector3()
     );
     const targetLookAt = new THREE.Vector3()
@@ -84,8 +84,8 @@ export default function Experience() {
       .normalize();
 
     const lookAt = cntLookAt.lerp(targetLookAt, delta * 24);
-    cameraGroup.current.lookAt(
-      cameraGroup.current.position.clone().add(lookAt)
+    cameraGroup.current?.lookAt(
+      cameraGroup.current?.position.clone().add(lookAt)
     );
 
     // 비행기 기울여지는 효과
@@ -120,12 +120,12 @@ export default function Experience() {
 
     const targetAirplaneQuaternion = new THREE.Quaternion().setFromEuler(
       new THREE.Euler(
-        airplane.current.rotation.x,
-        airplane.current.rotation.y,
+        airplane.current?.rotation.x,
+        airplane.current?.rotation.y,
         angle
       )
     );
-    airplane.current.quaternion.slerp(targetAirplaneQuaternion, delta * 2);
+    airplane.current?.quaternion.slerp(targetAirplaneQuaternion, delta * 2);
   });
 
   const airplane = useRef();
